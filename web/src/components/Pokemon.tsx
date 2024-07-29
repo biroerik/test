@@ -1,5 +1,4 @@
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -23,7 +22,6 @@ const Pokemon = ({ name }: IProps) => {
     height: number;
     abilities: string[];
   }>();
-  console.log(name);
   useEffect(() => {
     const Pokemon = async () => {
       try {
@@ -59,6 +57,9 @@ const Pokemon = ({ name }: IProps) => {
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {pokemon.weight} kg, {pokemon.height} cm
+        </Typography>
+        <Typography variant="body1" color="text.secondary">
+          {pokemon.abilities.join(", ")}
         </Typography>
       </CardContent>
       <CardActions>

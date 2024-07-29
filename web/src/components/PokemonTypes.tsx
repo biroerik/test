@@ -41,6 +41,7 @@ const PokemonTypes = () => {
         id="pokemonTypeSelect"
         value={selectedType}
         label="Pokemon Types"
+        fullWidth
         onChange={(e) => setSelectedType(e.target.value)}
       >
         {pokemonTypes.map((type) => (

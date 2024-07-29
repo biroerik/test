@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
 import Cookies from "js-cookie";
 import PokemonTypes from "./components/PokemonTypes";
 import { Button } from "@mui/material";
+import Search from "./components/Search";
 
 const App: React.FC = () => {
-  const [newMessage, setNewMessage] = useState<string>("");
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [token, setToken] = useState<string | undefined>(Cookies.get("jwt"));
@@ -39,13 +39,8 @@ const App: React.FC = () => {
       <header className="App-header">
         {token ? (
           <>
-            <h1>Search</h1>
-            <input
-              type="text"
-              placeholder="Search"
-              value={newMessage}
-              onChange={(e) => setNewMessage(e.target.value)}
-            />
+            <Search />
+            <hr style={{ width: "100%" }} />
             <PokemonTypes />
             <Button onClick={handleLogout}>Logout</Button>
           </>
